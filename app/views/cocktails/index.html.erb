@@ -1,0 +1,54 @@
+<div class="big-container d-flex">
+  <div class="image-holder logo" style="background-image:red; width: 50vw; height: 100vh; display:inline-block;">
+  </div>
+  <div class="text-stuff" style="background-color:blue; width: 50vw; height: 100vh; display: inline-block;">
+    <h1>Cocktails</h1>
+      <ul>
+        <div class="container">
+          <div class="row">
+            <% @cocktails.each do |cocktail| %>
+              <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1548158518-c2f131b1aa01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" class="card-img-top" alt="drink">
+                <div class="card-body">
+                  <h5 class="card-title"> <%= cocktail.name %> </h5>
+                  <p class="card-text"><%= cocktail.ingredients %></p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </ul>
+      <div>
+        <%= simple_form_for @cocktail do |f| %>
+          <%= f.input :name %>
+          <%= f.submit "Create a Cocktail", class: 'btn' %>
+        <% end %>
+
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- <h1>ALCOHOL, SPICE & ERRYTANG NICE</h1>
+  <div class="home_display">
+
+    <div>
+      <img src="https://unsplash.com/photos/ojBNujxI2_c" alt="drinks with friends">
+    </div>
+
+    <div>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+ -->

@@ -4,6 +4,7 @@ before_action :cocktail_params, only: [:create, :update]
 
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
   end
 
   def show

@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
 before_action :cocktail_lookup, only: [:show, :destroy, :update]
-before_action :cocktail_params, only: [:create, :update]
+# before_action :cocktail_params, only: [:create, :update]
 
   def index
     @cocktails = Cocktail.all

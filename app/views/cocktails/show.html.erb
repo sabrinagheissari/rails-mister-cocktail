@@ -8,4 +8,5 @@
   </li>
 </ul>
 
-<%= link_to "New Dose", new_cocktail_doses_path(@cocktail) %>
+<%= link_to "New Dose", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Delete", cocktail_path(@cocktail), method: :delete %>

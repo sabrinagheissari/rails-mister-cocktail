@@ -19,7 +19,7 @@ before_action :cocktail_lookup, only: [:show, :destroy, :update]
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      render :index
     end
   end
 
@@ -33,12 +33,13 @@ before_action :cocktail_lookup, only: [:show, :destroy, :update]
 
   def destroy
     @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   def cocktail_lookup

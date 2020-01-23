@@ -33,3 +33,4 @@ COCKTAIL_URLS.each do |cocktail_url|
   cocktail.remote_photo_url = cocktail_url
   cocktail.save
 end
+

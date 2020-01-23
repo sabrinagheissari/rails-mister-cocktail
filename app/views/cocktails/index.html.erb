@@ -20,8 +20,8 @@
     <div class="submit-cocktail"style="height: 200px">
       <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name, label: 'Name' %>
-      <%= f.input :photo, label: 'Photo', class: 'btn'%>
-      <%= f.input :photo_cache, as: :hidden%>
+      <%#= f.input :photo, label: 'Photo', class: 'btn'%>
+      <%#= f.input :photo_cache, as: :hidden%>
       <%= f.submit "Create Cocktail", style: 'margin-bottom:20px; margin-top:10px'%>
       <% end %>
     </div>

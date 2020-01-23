@@ -10,15 +10,32 @@
     </div>
   </div>
   <div class="text-stuff" style="background-color:#F2F3F4; width: 50vw; height: 100vh; display: grid; overflow: scroll">
-    <!-- <h1 class="pl-2 color:white position:relative">Sabby Snacks</h1>
-    <h2 class="pl-2 vw-50 color:white"></h2> -->
-    <!-- <div style="display: flex"> -->
+    <div style="margin-left: 8vh; margin-right: 8vh; color: #565555;">
+      <p style="padding-top: 40px;">Sabby Snacks is a website where a group of friends have gathered our favorite cocktails. So where are you? We need some help from you now!
+      <br>
+      Jump into the Mystery Machine. If you do come through you'll have yourself a Sabby Snack! That's a fact!</p>
+      <br>
+      <h4 style="text-shadow: 2px 4px 3px white; padding-bottom: 20px">ADD SOMETHING TO THE LIST:</h2>
+    </div>
+    <div class="submit-cocktail"style="height: 200px">
+      <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name, label: 'Name' %>
+      <%= f.input :photo, label: 'Photo', class: 'btn'%>
+      <%= f.input :photo_cache, as: :hidden%>
+      <%= f.submit "Create Cocktail", style: 'margin-bottom:20px; margin-top:10px'%>
+      <% end %>
+    </div>
     <div>
+      <h1 style="text-align: center;text-shadow: 2px 4px 3px white; padding-top: 20px; color: #565555;">SNACKS:</h1>
       <ul class="p-0">
         <div class="container">
           <div class="row">
             <% @cocktails.each do |cocktail| %>
-              <div class="cocktail-card p-0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo%>')">
+            <% if cocktail.photo.present? %>
+              <div class="cocktail-card p-0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo%>)">
+            <% else %>
+              <div class="cocktail-card p-0" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "#{rand(1..13)}.jpg"%>)">
+            <% end %>
                     <h1><%= cocktail.name.downcase %></h1>
                   <%= link_to "", cocktail_path(cocktail), class: 'cocktail-card-link' %>
               </div>
@@ -27,14 +44,7 @@
         </div>
       </ul>
     </div>
-    <div style="height: 15vh">
-      <%= simple_form_for @cocktail do |f| %>
-      <%= f.input :name %>
-      <%= f.submit "Create a Cocktail", class: 'btn', style: 'color:grey' %>
-      <%= f.input :photo, class: 'btn_dark' %>
-      <%= f.input :photo_cache, as: :hidden%>
-      <% end %>
-    </div>
+
     <!-- </div> -->
   </div>
 </div>

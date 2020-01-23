@@ -16,8 +16,13 @@ before_action :cocktail_lookup, only: [:show, :destroy, :update]
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    if @cocktail.save
-      redirect_to cocktail_path(@cocktail)
+    # authorize @cocktail
+    unless @cocktail.name.nil?
+      if @cocktail.save
+        redirect_to cocktail_path(@cocktail)
+      else
+        render :index
+      end
     else
       render :index
     end

@@ -10,18 +10,21 @@
   width: 100vw;
   padding: 130px;
   justify-content: center;
+  font-family: Raleway;
   color: white;
 }
 
 .home_btn {
   color: grey;
   background-color: transparent;
+  font-family: Raleway;
   border-color: transparent;
 }
 
 .cocktail_page_btn {
   background-color: transparent;
   color: white;
+  font-family: Raleway;
   border-color: transparent;
   border-radius: 8px;
 }
@@ -36,22 +39,37 @@
 .header {
   display: flex;
   text-align: center;
+  font-family: Raleway;
   justify-content: center;
 }
 
+.row {
+  display: grid !important;
+}
 
 .cocktail-card {
   background-size: cover;
   background-position: center;
   position: relative;
   height: 300px;
+  margin-top: 1vh;
+  margin-left: 1vh;
+  margin-right: 1vh;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
+  font-family: Raleway;
   align-items: center;
   font-color: white;
   font-size: 24px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   overflow: hidden;
+}
+
+.cocktail-card h1 {
+  color: #DFE3E7;
+  font-family: Raleway;
+  text-shadow: 1px 6px 13px black;
 }
 
 .cocktail-card:hover {
@@ -74,11 +92,17 @@
 
 .slideshow li span {
   width: 50%;
-  height: 70%;
+  height: 100vh;
   position: absolute;
   top: 0px;
   left: 0px;
-  color: transparent;
+  text-align: left;
+  padding-top: 50vh;
+  padding-left: 7vh;
+  font-size: 100px;
+  color: #DFE3E7;
+  font-family: Raleway;
+  text-shadow: 1px 6px 13px black;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: none;
@@ -100,7 +124,7 @@
   right: 0;
   opacity: 0;
   font-size: 4.0625em;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: Raleway;
   text-transform: uppercase;
   color: #fff;
   -webkit-animation: titleAnimation 24s linear 1 0s;
